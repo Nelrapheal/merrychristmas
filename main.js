@@ -51,6 +51,7 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
+        // Countdown Timer to New Year 2026
         function updateCountdown() {
             const newYear = new Date('January 1, 2026 00:00:00').getTime();
             const now = new Date().getTime();
@@ -67,8 +68,7 @@
             document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 
             if (distance < 0) {
-                document.getElementById('countdown').innerHTML = '<h2>🎉 HAPPY NEW YEAR 2026! 🎉</h2>';
-                createFireworks();
+                document.querySelector('.countdown-container').innerHTML = '<h2 style="font-size: 3rem; text-align: center; width: 100%;">🎉 HAPPY NEW YEAR 2026! 🎉</h2>';
             }
         }
 
@@ -192,7 +192,7 @@
             const text = '🎄 Merry Christmas! 🎄\n\nCheck out this beautiful Christmas celebration page!\n\n' + window.location.href;
             window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
         }
-        
+
         function copyLink() {
             navigator.clipboard.writeText(window.location.href).then(() => {
                 alert('🎁 Link copied! Share it with your loved ones!');
